@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# Build and distribution
+/build
+/dist
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Yarn
+.yarn/
+.yarnrc
+.yarn-integrity
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
