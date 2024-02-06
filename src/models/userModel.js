@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
-      match: /^\S+@\S+\.\S+$/,
     },
     profileImage: {
       type: String,
@@ -24,13 +23,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-      match: /^[6-9]\d{9}$/,
     },
     password: {
       type: String,
       required: true,
-      minlength: 8,
-      maxlength: 15,
     },
     address: {
       shipping: {
