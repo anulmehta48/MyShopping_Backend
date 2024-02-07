@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 export const isValid = function (value) {
   if (typeof value === "undefined" || typeof value === null) return false;
   if (typeof value === "string" && value.trim().length === 0) return false;
@@ -27,7 +28,7 @@ export const isValidRequestBody = function (requestbody) {
   return Object.keys(requestbody).length > 0;
 };
 
-export const isValidObjectId = function (ObjectId) {
+export const isValidObjectId = function(ObjectId) {
   return mongoose.Types.ObjectId.isValid(ObjectId);
 };
 

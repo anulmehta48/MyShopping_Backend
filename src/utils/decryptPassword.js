@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-const comparePasswords = async (password, hashedPassword) => {
+const decryptPassword = async (password, hashedPassword) => {
   try {
     const match = await bcrypt.compare(password, hashedPassword);
     return match;
@@ -8,4 +8,5 @@ const comparePasswords = async (password, hashedPassword) => {
   }
 };
 
-export default comparePasswords;
+export default decryptPassword;
+
