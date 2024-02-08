@@ -136,7 +136,7 @@ export const loginUser=async (req,res)=>{
     }
     const token=await generateToken(payload)
     res.setHeader('Authorization', `Bearer ${token}`);
-    res.status(200).send({status:true,message:"Login Successfully",token:token})
+    res.status(200).send({status:true,message:"Login Successfully",data:{userId:user._id,token:token}})
     
   } catch (error) {
     console.error("Login error:", error);

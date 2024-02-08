@@ -28,7 +28,7 @@ export const isValidRequestBody = function (requestbody) {
   return Object.keys(requestbody).length > 0;
 };
 
-export const isValidObjectId = function(ObjectId) {
+export const isValidObjectId = function (ObjectId) {
   return mongoose.Types.ObjectId.isValid(ObjectId);
 };
 
@@ -50,4 +50,25 @@ const validSize = function (value) {
     if (arr[i] == value) return true;
   }
   return false;
+};
+
+export const validateSizes = function (value) {
+  if (!value) {
+    return false;
+  }
+  const newArraysize = [value];
+  const validSizes = ["S", "XS", "M", "X", "L", "XXL", "XL"];
+  for (let val of newArraysize) {
+    const individualSizes = val.split(",").map((s) => s.trim().toUpperCase());
+    console.log(individualSizes);
+    for (let v of individualSizes) {
+      if (!validSizes.includes(v)) {
+        return {
+          validate: false,
+          sizeArray: individualSizes,
+        };
+      }
+    }
+    return { validate: true, sizeArray: individualSizes };
+  }
 };
